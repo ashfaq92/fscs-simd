@@ -76,7 +76,7 @@ class TestEfficiency:
 
 
 if __name__ == '__main__':
-    simulations = 50
+    simulations = 1000
     xyz = TestEfficiency(simulations)
     xyz.main()
     winsound.MessageBeep()
