@@ -23,7 +23,7 @@ The below picture shows that all the CPU cores are used to achieve maximum level
 ![alt text](results/FSCS-SIMD(NumPy+FAISS).png "Title")
 
 #### Results
-In this way, we managed to reduce computational efficiency of FSCS further:
+In this way, we managed to reduce computational overhead of FSCS further:
 ![alt text](results/results.png "Title")
 
 
