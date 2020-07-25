@@ -3,7 +3,8 @@ import winsound
 import random
 
 from fscs.FSCS import FSCS
-from vectorization.FSCS_VECTORIZED import FSCS_SIMD
+from fscsSimd.fscsSimd import FscsSimd
+from fscsSimd.fscsSimdFaiss import FscsFaiss
 
 
 class TestEfficiency:
@@ -25,14 +26,29 @@ class TestEfficiency:
         f.close()
         return totalTime / self.simulations
 
-    def testFscsSimd(self, bd, n):
+    def testFscsSimdNumPy(self, bd, n):
         fileName = str(len(bd)) + "d" + "FscsSimd" + str(n) + str(".txt")
         f = open(fileName, "w+")
         totalTime = 0
         for i in range(self.simulations):
             startTime = time.time()
-            myFscsSimd = FSCS_SIMD(bd)
-            myFscsSimd.generate_points(n)
+            myFscsSimd = FscsSimd(bd)
+            myFscsSimd.generatePoints(n)
+            timeTaken = time.time() - startTime
+            totalTime = totalTime + timeTaken
+            f.write(str(timeTaken) + "\n")
+        f.write(str(totalTime / self.simulations) + "\n")
+        f.close()
+        return totalTime / self.simulations
+
+    def testFscsSimdNumPyFaiss(self, bd, n):
+        fileName = str(len(bd)) + "d" + "FscsSimd" + str(n) + str(".txt")
+        f = open(fileName, "w+")
+        totalTime = 0
+        for i in range(self.simulations):
+            startTime = time.time()
+            myFscsSimd = FscsFaiss(bd)
+            myFscsSimd.generatePoints(n)
             timeTaken = time.time() - startTime
             totalTime = totalTime + timeTaken
             f.write(str(timeTaken) + "\n")
@@ -70,8 +86,10 @@ class TestEfficiency:
                 print('d: ', len(bd), 'tcNum', n)
                 t1 = self.testFscs(bd, n)
                 print(t1)
-                # t2 = self.testFscsSimd(bd, n)
-                # print(t2)
+                t2 = self.testFscsSimdNumPy(bd, n)
+                print(t2)
+                t3 = self.testFscsSimdNumPyFaiss(bd, n)
+                print(t3)
                 print("-----")
 
 

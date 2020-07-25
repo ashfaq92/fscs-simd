@@ -39,7 +39,7 @@ class FSCS:
         for i in range(self.candidate_num):
             candidate = self.gen_rand_tc()
             min_candidate_distance = sys.maxsize
-            for x in range(len(self.selected_set)):
+            for x in self.selected_set:  # Thank you!
                 dist = self.calc_distance(self.selected_set[x], candidate)
                 # find minimum distance MIN
                 if dist < min_candidate_distance:
