@@ -15,7 +15,7 @@ Description will be provided soon
 #### CPU Core Usage:
 
 ##### FSCS-SIMD using NumPy
-Although NumPy provided vectorization and parallelization. However, parallelization regarding CPU core usage was not upto the mark. As shown following most of the processing was sitting on a single CPU core:
+Although NumPy provided vectorization and parallelization ([link](https://stackoverflow.com/questions/44944367/are-numpys-basic-operations-vectorized-i-e-do-they-use-simd-operations)). However, parallelization regarding CPU core usage was not upto the mark. As shown following most of the processing was sitting on a single CPU core:
 ![alt text](results/FSCS-SIMD(NumPy).png "Title")
 
 ##### FSCS-SIMD using NumPy+FAISS
