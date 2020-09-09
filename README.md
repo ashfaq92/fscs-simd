@@ -1,6 +1,8 @@
 # FSCS-SIMD
 
-Description will be provided soon
+[FSCS-SIMD: An efficient implementation of Fixed-Size-Candidate-Set adaptive random testing using SIMD instructions (Research Paper)](http://2020.issre.net/research-accepted-papers)
+Description: A method to enhance the efficiency of FSCS-ART throught SIMD and Parallelization.
+
 
 
 ### Version 2.0 Updates
