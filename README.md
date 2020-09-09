@@ -1,6 +1,7 @@
 # FSCS-SIMD
-
-[FSCS-SIMD: An efficient implementation of Fixed-Size-Candidate-Set adaptive random testing using SIMD instructions (Research Paper)](http://2020.issre.net/research-accepted-papers)
+Code for our paper:
+[FSCS-SIMD: An efficient implementation of Fixed-Size-Candidate-Set adaptive random testing using SIMD instructions (Research Paper)](http://2020.issre.net/research-accepted-papers), Accepted in [The 31st International Symposium on Software Reliability Engineering (ISSRE 2020)](http://2020.issre.net/)
+ 
 Description: A method to enhance the efficiency of FSCS-ART throught SIMD and Parallelization.
 
 
